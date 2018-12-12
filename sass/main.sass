@@ -9,7 +9,17 @@
     padding: 0
 
 body
-    background: $lightgrey url(../img/backgrounds/bckgrainbow.png) no-repeat left
+    background: $lightgrey url(../img/backgrounds/bckgrainbow.png) no-repeat fixed -5% -55%
+
+
+h1
+    font-size: $bigger
+    line-height: 1.3em
+h2
+    font-size: $defalut_bigger
+    line-height: $medium
+p
+    line-height: $medium
 
 .container
     width: 1054px
@@ -17,7 +27,6 @@ body
     margin: 0 auto
     padding: 32px 24px 32px 32px
     background: $white
-
     .header
         &__firstline
             display: flex
@@ -36,7 +45,7 @@ body
                 #search__submit
                     width: 120px
                     height: 36px
-                    font-size: $search_button_size
+                    font-size: $medium_small
                     font-weight: 700
                     background: $lightblue
                     border: none
@@ -58,7 +67,7 @@ body
                 padding: 8px
                 color: $white
                 text-decoration: none
-                font-size: $nav_elements_size
+                font-size: $medium_small
                 text-align: center
                 &:nth-child(1)
                     background: $lightblue
@@ -76,3 +85,119 @@ body
                     background: $mediumgrey
                     padding-right: 350px
                     padding-left: 16px
+    .content
+        display: flex
+        &__main
+            width: 704px
+            .main__article
+                position: relative
+                .article__publicatedtime
+                    position: absolute
+                    left: -11%
+                    top: 3%
+                    display: flex
+                    flex-direction: column
+                    align-items: center
+                    span:first-child
+                        display: block
+                        width: 67px
+                        padding: 3px
+                        text-align: center
+                        font-size: $big
+                        background: $orange
+                        color: $lightgrey
+                        font-weight: 700
+                    span:last-child
+                        display: block
+                        width: 67px
+                        padding: 3px
+                        text-align: center
+                        font-size: $medium
+                        text-transform: uppercase
+                        background: $lightblue
+                        color: $white
+        &__aside
+            margin-top: 30px
+            width: 329px
+            .aside__interesting
+                span
+                    display: block
+                    width: 200px
+                    height: 36px
+                    padding: 8px 20px
+                    font-size: $medium_small
+                    text-transform: uppercase
+                    font-weight: 700
+                    background: $purple
+                    color: $white
+                .interesting__chooser
+                    margin-top: 4px
+                    display: flex
+                    justify-content: flex-start
+                    height: 36px
+                    text-transform: uppercase
+                    a
+                        display: block
+                        padding: 8px 20px 
+                        color: $white
+                        font-size: $medium_small
+                        text-decoration: none
+                        &:nth-child(1)
+                            background: $pink
+                        &:nth-child(2)
+                            background: $orange
+                        &:nth-child(3)
+                            background: $lightblue
+                            padding-left: 63px
+                            padding-right: 63px
+                .interesting__content
+                    margin-top: 20px
+                    .content__element
+                        display: flex
+                        padding-top: 14px
+                        justify-content: space-between
+                        align-items: center
+                        border-bottom: 2px solid $lightgrey
+                        &:first-child
+                            padding-top: 0
+                        img 
+                            padding: 1px
+                            border: 2px solid $lightgrey
+                        div
+                            padding: 14px
+                            h2
+                                color: $lightblue
+                            p
+                                font-size: $small
+            .aside__mostliked
+                span
+                    display: block
+                    height: 36px
+                    padding: 8px 20px
+                    font-size: $medium_small
+                    text-transform: uppercase
+                    font-weight: 700
+                    background: $purple
+                    color: $white
+                .mostliked__content
+                    margin-top: 14px
+                    .content__element
+                        display: flex
+                        padding-top: 14px
+                        justify-content: space-between
+                        align-items: center
+                        border-bottom: 2px solid $lightgrey
+                        &:first-child
+                            padding-top: 0
+                        img 
+                            padding: 1px
+                            border: 2px solid $lightgrey
+                        div
+                            padding: 14px
+                            h2
+                                color: $lightblue
+                            p
+                                font-size: $small
+                                a
+                                    font-size: $small
+                                    color: $lightblue
