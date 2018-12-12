@@ -1,0 +1,78 @@
+@import "colors"
+@import "sizes"
+    
+*
+    box-sizing: border-box
+    font-family: 'Open Sans', sans-serif
+    font-size: $default
+    margin: 0
+    padding: 0
+
+body
+    background: $lightgrey url(../img/backgrounds/bckgrainbow.png) no-repeat left
+
+.container
+    width: 1054px
+    height: 100%
+    margin: 0 auto
+    padding: 32px 24px 32px 32px
+    background: $white
+
+    .header
+        &__firstline
+            display: flex
+            justify-content: space-between
+            align-items: flex-end
+            padding-bottom: 19px
+            .firstline__search
+                display: flex
+                margin-right: 42px
+                margin-bottom: 3px
+                #search__field
+                    width: 318px
+                    height: 36px
+                    border: 1px solid $lightgrey_search
+                    border-right: none
+                #search__submit
+                    width: 120px
+                    height: 36px
+                    font-size: $search_button_size
+                    font-weight: 700
+                    background: $lightblue
+                    border: none
+                    color: $white
+                    &:hover
+                        cursor: pointer
+            .firstline__socialbuttons
+                display: flex
+                a
+                    margin-right: 6px
+                    &:last-child
+                        margin-right: 0
+        &__secondline
+            display: flex
+            justify-content: flex-start
+            text-transform: uppercase
+            a
+                min-width: 106px
+                padding: 8px
+                color: $white
+                text-decoration: none
+                font-size: $nav_elements_size
+                text-align: center
+                &:nth-child(1)
+                    background: $lightblue
+                &:nth-child(2)
+                    background: $saladgreen
+                &:nth-child(3)
+                    background: $purple
+                &:nth-child(4)
+                    background: $lightblue
+                &:nth-child(5)
+                    background: $orange
+                &:nth-child(6)
+                    background: $red
+                &:nth-child(7)
+                    background: $mediumgrey
+                    padding-right: 350px
+                    padding-left: 16px
