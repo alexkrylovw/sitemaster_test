@@ -8,7 +8,10 @@
 }
 
 body {
-  background: #ebebeb url(../img/backgrounds/bckgrainbow.png) no-repeat fixed -5% -55%;
+  background-color: #ebebeb;
+  background-image: url(../img/backgrounds/bckgrainbow.png), url(../img/backgrounds/bckgrainbow_small.png), url(../img/backgrounds/bckgrainbow_small_2.png);
+  background-repeat: no-repeat;
+  background-position: -5% -20%, 81% 0%, 81% 101%;
 }
 
 h1 {
@@ -172,14 +175,29 @@ p {
 }
 .container .content__aside .aside__interesting span {
   display: block;
-  width: 200px;
+  position: relative;
+  width: 163px;
   height: 36px;
-  padding: 8px 20px;
+  padding: 8px 18px;
   font-size: 1.3em;
   text-transform: uppercase;
+  letter-spacing: 0px;
   font-weight: 700;
   background: #5261ac;
   color: #fff;
+}
+.container .content__aside .aside__interesting span::before {
+  display: block;
+  position: absolute;
+  content: "";
+  width: 37px;
+  height: 36px;
+  left: 89%;
+  top: 0;
+  -webkit-transform: skew(45deg);
+  -moz-transform: skew(45deg);
+  -o-transform: skew(45deg);
+  background: #5261ac;
 }
 .container .content__aside .aside__interesting .interesting__chooser {
   margin-top: 4px;
@@ -192,23 +210,35 @@ p {
   height: 36px;
   text-transform: uppercase;
 }
-.container .content__aside .aside__interesting .interesting__chooser a {
+.container .content__aside .aside__interesting .interesting__chooser .chooser__category {
   display: block;
+  position: relative;
   padding: 8px 20px;
   color: #fff;
   font-size: 1.3em;
   text-decoration: none;
 }
-.container .content__aside .aside__interesting .interesting__chooser a:nth-child(1) {
+.container .content__aside .aside__interesting .interesting__chooser .chooser__category:nth-child(1) {
   background: #ec098d;
 }
-.container .content__aside .aside__interesting .interesting__chooser a:nth-child(2) {
+.container .content__aside .aside__interesting .interesting__chooser .chooser__category:nth-child(2) {
   background: #f78f1d;
 }
-.container .content__aside .aside__interesting .interesting__chooser a:nth-child(3) {
+.container .content__aside .aside__interesting .interesting__chooser .chooser__category:nth-child(3) {
   background: #00aedb;
   padding-left: 63px;
   padding-right: 63px;
+}
+.container .content__aside .aside__interesting .interesting__chooser .chooser__category--selected::after {
+  position: absolute;
+  content: "";
+  width: 13px;
+  height: 13px;
+  background-color: inherit;
+  left: 45%;
+  bottom: -6px;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
 }
 .container .content__aside .aside__interesting .interesting__content {
   margin-top: 20px;
@@ -224,22 +254,30 @@ p {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  border-bottom: 2px solid #ebebeb;
+  border-bottom: 1px solid #ebebeb;
+  text-decoration: none;
 }
 .container .content__aside .aside__interesting .interesting__content .content__element:first-child {
   padding-top: 0;
 }
+.container .content__aside .aside__interesting .interesting__content .content__element:last-child {
+  border: none;
+}
 .container .content__aside .aside__interesting .interesting__content .content__element img {
-  padding: 1px;
-  border: 2px solid #ebebeb;
+  padding: 3px;
+  border: 1px solid #ebebeb;
 }
 .container .content__aside .aside__interesting .interesting__content .content__element div {
   padding: 14px;
 }
-.container .content__aside .aside__interesting .interesting__content .content__element div h2 {
+.container .content__aside .aside__interesting .interesting__content .content__element div a {
+  text-decoration: none;
+}
+.container .content__aside .aside__interesting .interesting__content .content__element div a h2 {
   color: #00aedb;
 }
 .container .content__aside .aside__interesting .interesting__content .content__element div p {
+  color: #000;
   font-size: 0.9em;
 }
 .container .content__aside .aside__mostliked span {
@@ -266,14 +304,14 @@ p {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  border-bottom: 2px solid #ebebeb;
+  text-decoration: none;
 }
 .container .content__aside .aside__mostliked .mostliked__content .content__element:first-child {
   padding-top: 0;
 }
 .container .content__aside .aside__mostliked .mostliked__content .content__element img {
-  padding: 1px;
-  border: 2px solid #ebebeb;
+  padding: 3px;
+  border: 1px solid #ebebeb;
 }
 .container .content__aside .aside__mostliked .mostliked__content .content__element div {
   padding: 14px;
@@ -282,6 +320,7 @@ p {
   color: #00aedb;
 }
 .container .content__aside .aside__mostliked .mostliked__content .content__element div p {
+  color: #000;
   font-size: 0.9em;
 }
 .container .content__aside .aside__mostliked .mostliked__content .content__element div p a {

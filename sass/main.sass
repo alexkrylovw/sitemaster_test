@@ -9,7 +9,12 @@
     padding: 0
 
 body
-    background: $lightgrey url(../img/backgrounds/bckgrainbow.png) no-repeat fixed -5% -55%
+    background-color: $lightgrey
+    background-image: url(../img/backgrounds/bckgrainbow.png), url(../img/backgrounds/bckgrainbow_small.png), url(../img/backgrounds/bckgrainbow_small_2.png)
+    background-repeat: no-repeat
+    background-position: -5% -20%, 81% 0%, 81% 101%
+    
+
 
 
 h1
@@ -122,22 +127,37 @@ p
             .aside__interesting
                 span
                     display: block
-                    width: 200px
+                    position: relative
+                    width: 163px
                     height: 36px
-                    padding: 8px 20px
+                    padding: 8px 18px
                     font-size: $medium_small
                     text-transform: uppercase
+                    letter-spacing: 0px
                     font-weight: 700
                     background: $purple
                     color: $white
+                    &::before
+                        display: block
+                        position: absolute
+                        content: ""
+                        width: 37px
+                        height: 36px
+                        left: 89%
+                        top: 0
+                        -webkit-transform: skew(45deg)
+                        -moz-transform: skew(45deg)
+                        -o-transform: skew(45deg)
+                        background: $purple
                 .interesting__chooser
                     margin-top: 4px
                     display: flex
                     justify-content: flex-start
                     height: 36px
                     text-transform: uppercase
-                    a
+                    .chooser__category
                         display: block
+                        position: relative
                         padding: 8px 20px 
                         color: $white
                         font-size: $medium_small
@@ -150,6 +170,17 @@ p
                             background: $lightblue
                             padding-left: 63px
                             padding-right: 63px
+                        &--selected
+                            &::after
+                                position: absolute
+                                content: ""
+                                width: 13px
+                                height: 13px
+                                background-color: inherit
+                                left: 45%
+                                bottom: -6px
+                                transform: rotate(45deg)
+
                 .interesting__content
                     margin-top: 20px
                     .content__element
@@ -157,17 +188,23 @@ p
                         padding-top: 14px
                         justify-content: space-between
                         align-items: center
-                        border-bottom: 2px solid $lightgrey
+                        border-bottom: 1px solid $lightgrey
+                        text-decoration: none
                         &:first-child
                             padding-top: 0
+                        &:last-child
+                            border: none
                         img 
-                            padding: 1px
-                            border: 2px solid $lightgrey
+                            padding: 3px
+                            border: 1px solid $lightgrey
                         div
                             padding: 14px
-                            h2
-                                color: $lightblue
+                            a
+                                text-decoration: none
+                                h2
+                                    color: $lightblue 
                             p
+                                color: $black
                                 font-size: $small
             .aside__mostliked
                 span
@@ -186,17 +223,18 @@ p
                         padding-top: 14px
                         justify-content: space-between
                         align-items: center
-                        border-bottom: 2px solid $lightgrey
+                        text-decoration: none
                         &:first-child
                             padding-top: 0
                         img 
-                            padding: 1px
-                            border: 2px solid $lightgrey
+                            padding: 3px
+                            border: 1px solid $lightgrey
                         div
                             padding: 14px
                             h2
                                 color: $lightblue
                             p
+                                color: $black
                                 font-size: $small
                                 a
                                     font-size: $small
