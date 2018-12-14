@@ -7,12 +7,13 @@
     font-size: $default
     margin: 0
     padding: 0
+    letter-spacing: 0.005em
 
 body
     background-color: $lightgrey
     background-image: url(../img/backgrounds/bckgrainbow.png), url(../img/backgrounds/bckgrainbow_small.png), url(../img/backgrounds/bckgrainbow_small_2.png)
     background-repeat: no-repeat
-    background-position: -5% -20%, 81% 0%, 81% 101%
+    background-position: -5% -34%, 78.3% 0%, 78.3% 101%
     
 
 
@@ -25,12 +26,13 @@ h2
     line-height: $medium
 p
     line-height: $medium
+    word-wrap: break-word
 
 .container
     width: 1054px
     height: 100%
     margin: 0 auto
-    padding: 32px 24px 32px 32px
+    padding: 32px 23px 32px 32px
     background: $white
     .header
         &__firstline
@@ -89,22 +91,21 @@ p
                 &:nth-child(7)
                     background: $mediumgrey
                     padding-right: 350px
-                    padding-left: 16px
+                    padding-left: 13px
     .content
         display: flex
         &__main
-            width: 704px
+            margin-right: 22px
             .main__article
                 position: relative
                 .article__publicatedtime
                     position: absolute
-                    left: -11%
-                    top: 3%
+                    left: -76px
+                    top: 8px
                     display: flex
                     flex-direction: column
                     align-items: center
-                    span:first-child
-                        display: block
+                    div:first-child
                         width: 67px
                         padding: 3px
                         text-align: center
@@ -112,8 +113,7 @@ p
                         background: $orange
                         color: $lightgrey
                         font-weight: 700
-                    span:last-child
-                        display: block
+                    div:last-child
                         width: 67px
                         padding: 3px
                         text-align: center
@@ -121,9 +121,25 @@ p
                         text-transform: uppercase
                         background: $lightblue
                         color: $white
+                h1
+                    margin-left: -3px
+                    margin-top: 21px
+                    margin-bottom: 5px
+                .article__picturesblock
+                    padding: 10px 10px 8px 10px
+                    margin: 22px auto 28px auto
+                    border: 1px $mediumgrey2 solid
+                    background: $milkywhite
+                    &--choosen
+                        img
+                            width: 100%
+                    &--mini
+                        margin-top: 8px
+                        display: flex
+                        justify-content: space-between
+                        cursor: pointer
         &__aside
             margin-top: 30px
-            width: 329px
             .aside__interesting
                 span
                     display: block
@@ -155,10 +171,11 @@ p
                     justify-content: flex-start
                     height: 36px
                     text-transform: uppercase
+                    cursor: pointer
                     .chooser__category
                         display: block
                         position: relative
-                        padding: 8px 20px 
+                        padding: 8px 21px 
                         color: $white
                         font-size: $medium_small
                         text-decoration: none
@@ -168,8 +185,8 @@ p
                             background: $orange
                         &:nth-child(3)
                             background: $lightblue
-                            padding-left: 63px
-                            padding-right: 63px
+                            padding-left: 56px
+                            padding-right: 56px
                         &--selected
                             &::after
                                 position: absolute
@@ -182,23 +199,18 @@ p
                                 transform: rotate(45deg)
 
                 .interesting__content
-                    margin-top: 20px
                     .content__element
                         display: flex
                         padding-top: 14px
+                        padding-bottom: 16px
                         justify-content: space-between
                         align-items: center
                         border-bottom: 1px solid $lightgrey
                         text-decoration: none
-                        &:first-child
-                            padding-top: 0
                         &:last-child
                             border: none
-                        img 
-                            padding: 3px
-                            border: 1px solid $lightgrey
                         div
-                            padding: 14px
+                            padding-left: 14px
                             a
                                 text-decoration: none
                                 h2
@@ -210,25 +222,19 @@ p
                 span
                     display: block
                     height: 36px
-                    padding: 8px 20px
+                    margin-top: 10px
+                    padding: 8px 16px 8px 18px
                     font-size: $medium_small
                     text-transform: uppercase
                     font-weight: 700
                     background: $purple
                     color: $white
                 .mostliked__content
-                    margin-top: 14px
                     .content__element
                         display: flex
-                        padding-top: 14px
                         justify-content: space-between
-                        align-items: center
+                        align-items: flex-end
                         text-decoration: none
-                        &:first-child
-                            padding-top: 0
-                        img 
-                            padding: 3px
-                            border: 1px solid $lightgrey
                         div
                             padding: 14px
                             h2

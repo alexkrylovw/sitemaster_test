@@ -64,3 +64,17 @@ $('.chooser__category').click(function(){
         );
     }
 });
+
+
+
+/////////////
+/////////////
+/////////////
+
+
+///IMAGE PICKER
+$(".article__picturesblock--mini>div>img").click(function (){
+    var pickedElement = $(this).attr("src");
+    pickedElementNumber = pickedElement.match(/\d+/g); //Regular expression for extracting "first group of numbers"
+    $(".article__picturesblock--choosen>img").attr("src", "img/screenshots/full/full_" + pickedElementNumber + ".png");
+});
