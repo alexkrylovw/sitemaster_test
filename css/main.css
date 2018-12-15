@@ -24,6 +24,11 @@ h1 {
     text-align: center;
   }
 }
+@media screen and (max-width: 382px) {
+  h1 {
+    font-size: 2em;
+  }
+}
 
 h2 {
   font-size: 1.1em;
