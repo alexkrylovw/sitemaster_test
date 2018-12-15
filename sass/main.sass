@@ -1,5 +1,6 @@
 @import "colors"
 @import "sizes"
+@import "mixins"
     
 *
     box-sizing: border-box
@@ -21,12 +22,18 @@ body
 h1
     font-size: $bigger
     line-height: 1.3em
+    @include burger-menu-init-mq
+        text-align: center
 h2
     font-size: $defalut_bigger
     line-height: $medium
+    @include burger-menu-init-mq
+        text-align: center
 p
     line-height: $medium
     word-wrap: break-word
+    @include burger-menu-init-mq
+        text-align: center
 
 .container
     width: 1054px
@@ -34,21 +41,37 @@ p
     margin: 0 auto
     padding: 32px 23px 32px 32px
     background: $white
+    @include full-width-container-mq
+        width: 80%
+        margin-left: auto
+        margin-right: auto
+    @include burger-menu-init-mq
+        width: 100%
+        padding: 20px
     .header
         &__firstline
             display: flex
             justify-content: space-between
             align-items: flex-end
             padding-bottom: 19px
+            @include header-changer-mq
+                flex-direction: column
+                align-items: center
             .firstline__search
                 display: flex
                 margin-right: 42px
                 margin-bottom: 3px
+                @include header-changer-mq
+                    margin-right: 0
+                    margin-top: 20px
+                    margin-bottom: 20px
                 #search__field
                     width: 318px
                     height: 36px
                     border: 1px solid $lightgrey_search
                     border-right: none
+                    @include autosize-fields-init-mq
+                        width: auto
                 #search__submit
                     width: 120px
                     height: 36px
@@ -57,6 +80,8 @@ p
                     background: $lightblue
                     border: none
                     color: $white
+                    @include autosize-fields-init-mq
+                        width: auto
                     &:hover
                         cursor: pointer
             .firstline__socialbuttons
@@ -69,6 +94,17 @@ p
             display: flex
             justify-content: flex-start
             text-transform: uppercase
+            @include header-changer-mq
+                justify-content: center
+                flex-wrap: wrap
+            @include burger-menu-init-mq
+                display: none
+                overflow: hidden
+                position: fixed
+                width: 100%
+                top: 50px
+                left: 0px
+                z-index: 9998
             a
                 min-width: 106px
                 padding: 8px
@@ -76,6 +112,13 @@ p
                 text-decoration: none
                 font-size: $medium_small
                 text-align: center
+                @include header-changer-mq
+                    min-width: auto
+                    margin-right: 5px
+                    margin-bottom: 5px
+                @include burger-menu-init-mq
+                    width: 100%
+                    margin: 0 auto
                 &:nth-child(1)
                     background: $lightblue
                 &:nth-child(2)
@@ -92,8 +135,15 @@ p
                     background: $mediumgrey
                     padding-right: 350px
                     padding-left: 13px
+                    @include full-width-container-mq
+                        padding-right: 18.3%
+                    @include header-changer-mq
+                        padding-right: 8px
+                        padding-left: 8px
     .content
         display: flex
+        @include full-width-container-mq
+            flex-direction: column
         &__main
             margin-right: 22px
             .main__article
@@ -102,9 +152,13 @@ p
                     position: absolute
                     left: -76px
                     top: 8px
-                    display: flex
-                    flex-direction: column
-                    align-items: center
+                    @include full-width-container-mq
+                        left: -99px
+                    @include burger-menu-init-mq
+                        position: static
+                        width: 50px
+                        margin-left: auto
+                        margin-right: auto
                     div:first-child
                         width: 67px
                         padding: 3px
@@ -138,6 +192,8 @@ p
                         display: flex
                         justify-content: space-between
                         cursor: pointer
+                        img
+                            width: 100%
         &__aside
             margin-top: 30px
             .aside__interesting
@@ -153,6 +209,16 @@ p
                     font-weight: 700
                     background: $purple
                     color: $white
+                    @include full-width-container-mq
+                        width: 325px
+                        margin-left: auto
+                        margin-right: auto
+                        text-align: center
+                    @include autosize-fields-init-mq
+                        width: auto
+                        height: 72px
+                        padding-top: 27px
+                        text-align: center
                     &::before
                         display: block
                         position: absolute
@@ -165,6 +231,8 @@ p
                         -moz-transform: skew(45deg)
                         -o-transform: skew(45deg)
                         background: $purple
+                        @include full-width-container-mq
+                            display: none
                 .interesting__chooser
                     margin-top: 4px
                     display: flex
@@ -172,6 +240,12 @@ p
                     height: 36px
                     text-transform: uppercase
                     cursor: pointer
+                    @include full-width-container-mq
+                        justify-content: center
+                    @include autosize-fields-init-mq
+                        margin-top: 40px
+                        margin-bottom: 40px
+                        flex-direction: column
                     .chooser__category
                         display: block
                         position: relative
@@ -179,6 +253,9 @@ p
                         color: $white
                         font-size: $medium_small
                         text-decoration: none
+                        @include autosize-fields-init-mq
+                            text-align: left
+                            width: 90%
                         &:nth-child(1)
                             background: $pink
                         &:nth-child(2)
@@ -187,6 +264,9 @@ p
                             background: $lightblue
                             padding-left: 56px
                             padding-right: 56px
+                            @include autosize-fields-init-mq
+                                padding-left: 21px
+                                padding-right: 21px
                         &--selected
                             &::after
                                 position: absolute
@@ -197,7 +277,9 @@ p
                                 left: 45%
                                 bottom: -6px
                                 transform: rotate(45deg)
-
+                                @include autosize-fields-init-mq
+                                    left: 106%
+                                    bottom: 28%
                 .interesting__content
                     .content__element
                         display: flex
@@ -207,10 +289,14 @@ p
                         align-items: center
                         border-bottom: 1px solid $lightgrey
                         text-decoration: none
+                        @include full-width-container-mq
+                            justify-content: center
                         &:last-child
                             border: none
                         div
                             padding-left: 14px
+                            @include full-width-container-mq
+                                width: 60%
                             a
                                 text-decoration: none
                                 h2
@@ -229,14 +315,31 @@ p
                     font-weight: 700
                     background: $purple
                     color: $white
+                    @include full-width-container-mq
+                        width: 325px
+                        margin-left: auto
+                        margin-right: auto
+                        margin-bottom: 16px
+                    @include autosize-fields-init-mq
+                        width: auto
+                        height: 72px
+                        padding-top: 27px
+                        text-align: center
+                    @include one-span-fix-mq
+                        padding-top: 15px
+                        
                 .mostliked__content
                     .content__element
                         display: flex
                         justify-content: space-between
                         align-items: flex-end
                         text-decoration: none
+                        @include full-width-container-mq
+                            justify-content: center
                         div
                             padding: 14px
+                            @include full-width-container-mq
+                                width: 60%
                             h2
                                 color: $lightblue
                             p
@@ -245,3 +348,52 @@ p
                                 a
                                     font-size: $small
                                     color: $lightblue
+
+//responsive menu styling
+#nav-burger-button
+    display: none
+    position: fixed
+    top: 0
+    left: 0
+    background-color: $saladgreen
+    height: 50px
+    width: 50px
+    cursor: pointer
+    transition: 0.3s
+    z-index: 9999
+    @include burger-menu-init-mq
+        display: block
+    span
+        position: absolute
+        height: 3px
+        width: 25px
+        background-color: $white
+        top: 50%
+        left: 50%
+        transform: translate(-50%,-50%)
+        transition: 0.3s
+        &::before
+            content: ''
+            position: absolute
+            top: -8px
+            background: $white
+            height: 3px
+            width: 25px
+            transition: 0.3s
+        &::after
+            content: ''
+            position: absolute
+            top: 8px
+            background: $white
+            height: 3px
+            width: 25px
+            transition: 0.3s
+    &.active
+        span
+            background-color: transparent
+            &::before
+                transform: rotate(45deg)
+                top: 0
+            &::after
+                transform: rotate(-45deg)
+                top: 0

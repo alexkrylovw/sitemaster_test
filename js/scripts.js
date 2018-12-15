@@ -75,6 +75,25 @@ $('.chooser__category').click(function(){
 ///IMAGE PICKER
 $(".article__picturesblock--mini>div>img").click(function (){
     var pickedElement = $(this).attr("src");
+    var pickedElementDescription = $(this).attr("alt");
     pickedElementNumber = pickedElement.match(/\d+/g); //Regular expression for extracting "first group of numbers"
     $(".article__picturesblock--choosen>img").attr("src", "img/screenshots/full/full_" + pickedElementNumber + ".png");
+    $(".article__picturesblock--choosen>img").attr("alt", pickedElementDescription);
 });
+
+
+/////////////
+/////////////
+/////////////
+
+
+///RESPONSIVE MENU
+
+$("#nav-burger-button").click(function() {
+    $("#nav-burger-button").toggleClass("active");
+    $(".header__secondline").slideToggle();
+    if ($("#nav-burger-button").hasClass("active")) {
+        $(".header__secondline").css("display","flex");
+    }
+});
+    

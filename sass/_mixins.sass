@@ -1,0 +1,23 @@
+////Media queries
+
+//custom sizes
+
+@mixin full-width-container-mq
+    @media screen and (max-width: 1161px)
+        @content    
+
+@mixin header-changer-mq
+    @media screen and (max-width: 1085px)
+        @content   
+
+@mixin burger-menu-init-mq
+    @media screen and (max-width: 750px)
+        @content
+
+@mixin autosize-fields-init-mq
+    @media screen and (max-width: 465px)
+        @content
+
+@mixin one-span-fix-mq
+    @media screen and (max-width: 382px)
+        @content
